@@ -18,6 +18,7 @@ public:
 private:
     entt::entity                    mEntity;
     sf::Texture                     texture;
+    sf::Texture                     texture2;
 
     void Update(float dt);                                                  // Called from begin
     void Render();                                                          // Called from begin

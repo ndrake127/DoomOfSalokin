@@ -14,12 +14,21 @@ Game::Game() {
     mEntityRegistry.emplace<Actions>(mEntity);
     mEntityRegistry.emplace<Collision>(mEntity);
 
+    if (!texture2.loadFromFile("resources/background.jpg")) {
+        std::cerr << "Background image not loaded!\n";
+    }
+
     if (!texture.loadFromFile("resources/gandalf.png")) {
         std::cerr << "Gandalf not loaded!\n";
     }
 
     test.mSprite.setTexture(texture);
     test.mSprite.scale(sf::Vector2f(1.0f, 1.0f) * 3.0f);
+
+    mEntity = mEntityRegistry.create();
+    
+    Drawable& test2 = mEntityRegistry.emplace<Drawable>(mEntity);
+    test2.mSprite.setTexture(texture2);
 
     mDrawSystem.reset(new DrawSystem(&mWindow));
     mInputSystem.reset(new InputSystem);
@@ -28,9 +37,13 @@ Game::Game() {
 Game::~Game() {}
 
 void Game::Begin() {        
+    //  sf::Clock absoluteClock;
     sf::Clock clock;
 
     while(mWindow.isOpen()) {
+        // std::cout << "Loop Rate: " << 1.0 / absoluteClock.getElapsedTime().asSeconds() << '\n';
+        // absoluteClock.restart();
+        
         sf::Event event;
 
         while (mWindow.pollEvent(event)) {
