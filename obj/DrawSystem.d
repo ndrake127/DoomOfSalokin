@@ -88,7 +88,7 @@ obj/DrawSystem.o: src/DrawSystem.cpp include/DrawSystem.h \
  include/entt/signal/../core/type_info.hpp \
  include/entt/signal/../core/utility.hpp include/entt/signal/sigh.hpp \
  include/entt/signal/emitter.hpp include/entt/signal/sigh.hpp \
- include/components.h
+ include/ResourceManager.h include/components.h
 
 include/DrawSystem.h:
 
@@ -375,5 +375,7 @@ include/entt/signal/sigh.hpp:
 include/entt/signal/emitter.hpp:
 
 include/entt/signal/sigh.hpp:
+
+include/ResourceManager.h:
 
 include/components.h:

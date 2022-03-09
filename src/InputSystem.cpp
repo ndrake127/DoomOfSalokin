@@ -19,6 +19,11 @@ void InputSystem::Update(entt::registry& registry) {
 
     PlayerView.each([this](auto&& player, auto&& actions) {
         actions.MoveHorizontal = Horizontal();
+
+        if(actions.MoveHorizontal != 0) {
+            if(actions.MoveHorizontal == -1) actions.lookingLeft = true;
+            else                             actions.lookingLeft = false;
+        }
         
         if(Vertical() == -1) actions.Jump = true;
         else                 actions.Jump = false;

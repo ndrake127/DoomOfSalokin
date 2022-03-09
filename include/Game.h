@@ -8,6 +8,8 @@
 #include "PhysicsSystem.h"
 #include "InputSystem.h"
 
+#include "ResourceManager.h"
+
 class Game {
 public:
     Game();
@@ -17,8 +19,6 @@ public:
 
 private:
     entt::entity                    mEntity;
-    sf::Texture                     texture;
-    sf::Texture                     texture2;
 
     void Update(float dt);                                                  // Called from begin
     void Render();                                                          // Called from begin
@@ -31,6 +31,8 @@ private:
     const float                     mFrameTime = 1.0 / 144.0;
 
     entt::registry                  mEntityRegistry;                        // ECS registry
+
+    ResourceManager                 mResourceManager;    
 
     /* System Declarations */
     std::unique_ptr<DrawSystem>     mDrawSystem;                            // Handles entity drawing

@@ -87,8 +87,9 @@ obj/Game.o: src/Game.cpp include/Game.h include/entt/entt.hpp \
  include/entt/signal/../core/type_info.hpp \
  include/entt/signal/../core/utility.hpp include/entt/signal/sigh.hpp \
  include/entt/signal/emitter.hpp include/entt/signal/sigh.hpp \
- include/DrawSystem.h include/PhysicsSystem.h include/components.h \
- include/InputSystem.h include/entt/entity/registry.hpp
+ include/DrawSystem.h include/ResourceManager.h include/PhysicsSystem.h \
+ include/components.h include/InputSystem.h \
+ include/entt/entity/registry.hpp
 
 include/Game.h:
 
@@ -377,6 +378,8 @@ include/entt/signal/emitter.hpp:
 include/entt/signal/sigh.hpp:
 
 include/DrawSystem.h:
+
+include/ResourceManager.h:
 
 include/PhysicsSystem.h:
 
